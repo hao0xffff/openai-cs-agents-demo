@@ -110,7 +110,7 @@ export default function Home() {
   }, [hydrateState, threadId]);
 
   return (
-    <main className="flex h-full gap-2 p-2">
+    <main className="flex flex-1 gap-2 p-2 overflow-hidden">
       <AgentPanel
         agents={agents}
         currentAgent={currentAgent}

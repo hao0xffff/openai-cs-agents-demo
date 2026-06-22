@@ -23,7 +23,8 @@ from .tools import (
     update_seat,
 )
 
-MODEL = os.getenv("MODEL_NAME", "MiniMax-M2.7")
+MODEL = os.getenv("MODEL_NAME", "mimo-v2.5-pro")
+OPENAI_BASE_URL = os.getenv("OPENAI_BASE_URL", "https://token-plan-cn.xiaomimimo.com/v1")
 
 
 def seat_services_instructions(

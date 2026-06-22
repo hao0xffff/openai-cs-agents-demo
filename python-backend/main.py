@@ -2,7 +2,22 @@ from __future__ import annotations as _annotations
 
 import json
 import os
+from pathlib import Path
 from typing import Any, Dict
+
+# 读取 .env 配置文件（必须在 import SDK 之前设置环境变量）
+_dotenv_path = Path(__file__).parent / ".env"
+if _dotenv_path.exists():
+    with open(_dotenv_path, "r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if line and not line.startswith("#") and "=" in line:
+                key, val = line.split("=", 1)
+                os.environ.setdefault(key.strip(), val.strip())
+
+# 强制用 chat/completions API（MiniMax 不支持 responses API）
+from agents.models._openai_shared import set_use_responses_by_default
+set_use_responses_by_default(False)
 
 from dotenv import load_dotenv
 
