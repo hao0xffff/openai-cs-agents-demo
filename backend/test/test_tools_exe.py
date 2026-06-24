@@ -80,7 +80,7 @@ tools = [
 
 # 3. 发送请求
 llm = MimoLLM(api_key="tp-c6lzdivx2w1reovdamcaj7dyoqk9ycx64i42loiyqj4nqfr1", model="mimo-v2.5-pro")
-res = llm.chat_raw(input_data="我要吃汉堡", tools=tools)
+res = llm.chat_raw(input_data="我要吃河南饭", tools=tools)
 
 # 4. 解析并执行
 tool_calls = parse_tool_calls(res)
