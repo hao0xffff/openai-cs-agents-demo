@@ -38,3 +38,31 @@ class MimoLLM(BaseLLM):
                         return content_block.get("text", "")
         
         return ""
+
+    def chat_raw(self, input_data: Union[str, list], **kwargs) -> dict:
+        """
+        发送请求并返回原始 API 响应（dict 格式）。
+        不做任何解析，直接返回完整的响应体。
+        """
+        headers = {
+            "Authorization": f"Bearer {self.api_key}",
+            "Content-Type": "application/json"
+        }
+
+        payload = {
+            "model": self.model,
+            "input": input_data,
+            **kwargs
+        }
+
+        endpoint = f"{self.base_url}/responses"
+
+        response = requests.post(endpoint, headers=headers, json=payload)
+        response.raise_for_status()
+
+        data = response.json()
+
+        # 打印完整的原始返回体 JSON
+        print("\n【API 原始返回体】:\n", json.dumps(data, indent=4, ensure_ascii=False), "\n")
+
+        return data
