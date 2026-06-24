@@ -1,6 +1,6 @@
 # app/persist/memory.py
 from typing import List, Dict, Any
-from app.core.context import BaseMemoryStore
+from core.context.context import BaseMemoryStore
 
 class DictMemoryStore(BaseMemoryStore):
     """

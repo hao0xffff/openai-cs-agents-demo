@@ -1,6 +1,6 @@
 # app/core/orchestrator.py
 from typing import List, Dict, Any, Optional
-from app.core.agent import BaseAgent
+from core.agent.agent import BaseAgent
 
 class Orchestrator:
     def __init__(self, agents: List[BaseAgent], default_agent_id: str, max_turns: int = 10):
