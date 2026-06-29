@@ -2,7 +2,7 @@ from core.engine import run_swarm
 from agents.reception_agent import reception_agent
 
 def main():
-    print("🍔 欢迎来到手搓版麦当劳 Agent 模拟系统 (输入 'quit' 退出)")
+    print("🍔 欢迎来到麦当劳 Agent 模拟系统 (输入 'quit' 退出)")
     
     current_agent = reception_agent
     messages = []

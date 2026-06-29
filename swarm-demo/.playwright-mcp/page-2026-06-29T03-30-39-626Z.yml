@@ -1,0 +1,14 @@
+- generic [ref=e3]:
+  - generic [ref=e4]:
+    - generic [ref=e5]:
+      - heading "Agent 交接链路" [level=3] [ref=e6]
+      - generic [ref=e9]: 迎宾员
+    - generic [ref=e10]:
+      - heading "LLM 调用详情" [level=3] [ref=e11]
+      - generic [ref=e12]: 暂无调用记录
+  - generic [ref=e13]:
+    - generic [ref=e14]: "当前 Agent: 迎宾员"
+    - generic [ref=e16]: 开始和 Agent 对话吧！
+    - generic [ref=e17]:
+      - textbox "输入消息..." [ref=e18]
+      - button "发送" [disabled] [ref=e19]
